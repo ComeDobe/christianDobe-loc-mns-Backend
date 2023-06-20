@@ -6,7 +6,6 @@ from materiel m
          join pret p on m.materiel_id
 where year( p.pret_fin)=2023;
 
-
 -- afficher le nom, prenom et la quantité de materiel emprunté par les utilisateur
 
 SELECT u.user_first_name, u.user_last_name, p.pret_qte
