@@ -1,7 +1,7 @@
 package com.example.loctest.controller;
-import com.example.loctest.entity.JwtRequest;
-import com.example.loctest.entity.JwtResponse;
-import com.example.loctest.service.JwtService;
+import com.example.loctest.dto.auth.JwtRequest;
+import com.example.loctest.dto.auth.JwtResponse;
+import com.example.loctest.service.strategy.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;

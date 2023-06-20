@@ -1,5 +1,5 @@
 package com.example.loctest.security;
-import com.example.loctest.service.JwtService;
+import com.example.loctest.service.strategy.JwtService;
 import com.example.loctest.util.JwtUtil;
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +23,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     private JwtUtil jwtUtil;
 
     @Autowired
+
     private JwtService jwtService;
 
     @Override
@@ -43,7 +44,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 System.out.println("le token JWT a expiré");
             }
         } else {
-            System.out.println("le token JWT ne commence pas par un Bearer ");
+            System.out.println(" Bearer ");
         }
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {

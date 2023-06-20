@@ -1,7 +1,7 @@
-package com.example.loctest.service;
+package com.example.loctest.service.strategy;
 import com.example.loctest.repository.UserDao;
-import com.example.loctest.entity.JwtRequest;
-import com.example.loctest.entity.JwtResponse;
+import com.example.loctest.dto.auth.JwtRequest;
+import com.example.loctest.dto.auth.JwtResponse;
 import com.example.loctest.entity.User;
 import com.example.loctest.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;

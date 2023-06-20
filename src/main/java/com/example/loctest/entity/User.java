@@ -42,6 +42,7 @@ public class User {
                     @JoinColumn(name = "ROLE_ID")
             }
     )
+
     private Set<Role> role;
 
     public String getUserName() {

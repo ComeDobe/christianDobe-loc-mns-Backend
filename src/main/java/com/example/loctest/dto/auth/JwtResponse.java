@@ -1,4 +1,6 @@
-package com.example.loctest.entity;
+package com.example.loctest.dto.auth;
+
+import com.example.loctest.entity.User;
 
 public class JwtResponse {
 

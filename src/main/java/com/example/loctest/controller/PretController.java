@@ -47,7 +47,6 @@
 
 
 
-
 import com.example.loctest.entity.PretEntity;
 import com.example.loctest.service.PretService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,14 +57,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/demande_pret")
+@RequestMapping("/pret")
 public class PretController {
 
     @Autowired
     private PretService pretService;
 
     // Récupérer tous les prêts
-    @GetMapping("/demande_pret")
+    @GetMapping("")
     public List<PretEntity> getAllPrets() {
         return pretService.getAllPrets();
     }
@@ -77,7 +76,8 @@ public class PretController {
     }
 
     // Ajouter un nouveau prêt
-    @PostMapping("")
+    @PostMapping("/add")
+
     public ResponseEntity<PretEntity> addPret(@RequestBody PretEntity pret) {
         // Valider les données de l'utilisateur avant d'ajouter un nouveau prêt
         if (pret.getPretDescription() == null || pret.getPretDescription().isEmpty() || pret.getDateDebut() == null || pret.getDateFin() == null) {
@@ -98,5 +98,3 @@ public class PretController {
         return new ResponseEntity<>("Pret deleted successfully", HttpStatus.OK);
     }
 }
-
-

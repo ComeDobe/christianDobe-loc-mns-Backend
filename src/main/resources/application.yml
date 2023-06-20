@@ -1,0 +1,20 @@
+
+
+spring:
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    port: 587
+    username: autorisation.loc@gmail.com
+    password: tmbnmspvphsznbyy
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+        debug: true
+    test-connection: false
+    protocol: smtp
+admin.email: autorisation.loc@gmail.com
+

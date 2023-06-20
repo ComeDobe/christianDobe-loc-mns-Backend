@@ -13,10 +13,83 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>LocTest</name>
     <description>LocTest</description>
+
+<!--    nouv-->
+
+    <packaging>war</packaging>
+
+<!--    <properties>-->
+<!--        <java.version>11</java.version>-->
+<!--        <skipUnitTest>false</skipUnitTest>-->
+<!--    </properties>-->
+
+
+<!--    nouv la partie skipunitest-->
+
     <properties>
         <java.version>17</java.version>
+        <skipUnitTest>false</skipUnitTest>
     </properties>
+
     <dependencies>
+
+        <!-- Dépendance pour JUnit 5 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!-- Dépendance pour Mockito -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>4.5.1</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!-- Dépendance pour Spring Test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>2.5.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-devtools</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-devtools-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.security</groupId>
+                    <artifactId>spring-security-core</artifactId>
+                </exclusion>
+                <!-- Ajoutez d'autres exclusions si nécessaire -->
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
 
 
         <dependency>
@@ -66,8 +139,58 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
+
+
+<!--    nouvel ajout-->
+    <!--	affichage des profils-->
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <skipUnitTest> false</skipUnitTest>
+                <adresse_serveur_bdd>localhost:3306</adresse_serveur_bdd>
+<!--                <nom_bdd>test24</nom_bdd>-->
+                <nom_bdd>dobelocmns</nom_bdd>
+                <utilisateur_bdd>root</utilisateur_bdd>
+                <mot_de_passe_bdd></mot_de_passe_bdd>
+                <ddl_auto>create</ddl_auto>
+                <nom_fichier_sql>mysql</nom_fichier_sql>
+                <initialisation_donnee_bdd>true</initialisation_donnee_bdd>
+                <mode_initialisation_donnee_bdd>always</mode_initialisation_donnee_bdd>
+                <dossier_upload>D:\\stockage</dossier_upload>
+                <jwt_secret></jwt_secret>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>prod</id>
+            <properties>
+                <skipUnitTest> true</skipUnitTest>
+                <adresse_serveur_bdd>172.18.0.2:3306</adresse_serveur_bdd>
+<!--                <nom_bdd>test24</nom_bdd>-->
+                <nom_bdd>dobelocmns</nom_bdd>
+                <utilisateur_bdd>root</utilisateur_bdd>
+                <mot_de_passe_bdd></mot_de_passe_bdd>
+                <ddl_auto>none</ddl_auto>
+                <nom_fichier_sql></nom_fichier_sql>
+                <initialisation_donnee_bdd>false</initialisation_donnee_bdd>
+                <mode_initialisation_donnee_bdd>never</mode_initialisation_donnee_bdd>
+                <dossier_upload>/uploads</dossier_upload>
+                <jwt_secret></jwt_secret>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>

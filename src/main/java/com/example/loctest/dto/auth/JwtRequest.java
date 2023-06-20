@@ -1,4 +1,4 @@
-package com.example.loctest.entity;
+package com.example.loctest.dto.auth;
 
 public class JwtRequest {
 

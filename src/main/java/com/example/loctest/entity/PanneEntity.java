@@ -22,7 +22,12 @@ public class PanneEntity {
     @Column(name = "user_name")
     private String userName;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
     @ManyToOne
     private MaterielEntity materiel;
 
+    public void setErrorMessage(String message) {
+    }
 }

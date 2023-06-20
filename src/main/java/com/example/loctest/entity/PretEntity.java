@@ -1,15 +1,14 @@
 package com.example.loctest.entity;
 
 
-import com.example.loctest.entity.User;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "demande_pret")
+@Table(name = "pret")
 @Getter
 @Setter
 public class PretEntity {
@@ -20,18 +19,46 @@ public class PretEntity {
     private int pretId;
 
     @Column(name = "pret_debut")
-    private Date dateDebut;
+    private LocalDate dateDebut;
 
     @Column(name = "pret_fin")
-    private Date dateFin;
+    private LocalDate dateFin;
 
     @Column(name = "pret_description")
     private String pretDescription;
+
+    @Column(name = "pret_qte")
+    private Integer pretQuantite;
 
     @ManyToOne
     @JoinColumn(name = "user_name")
     private User user;
 
-//    public int getMaterielId() {
-//    }
+    @Column(name = "pret_valide")
+    private boolean pretValide;
+
+    @Column(name = "prolongation_valide")
+    private boolean prolongationValide;
+
+
+
+    public void setMateriel(MaterielEntity materiel) {
+    }
+
+    public MaterielEntity getMateriel() {
+        return null;
+    }
+
+    public void setValide(boolean valide) {
+        this.pretValide = valide;
+    }
+
+    public void setProlongationValide(boolean valide) {
+        this.prolongationValide = valide;
+    }
+
+
+    public boolean isValide() {
+        return  pretValide;
+    }
 }
