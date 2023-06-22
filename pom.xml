@@ -177,11 +177,11 @@
             <id>prod</id>
             <properties>
                 <skipUnitTest> true</skipUnitTest>
-                <adresse_serveur_bdd>172.18.0.2:3306</adresse_serveur_bdd>
+                <adresse_serveur_bdd>172.17.0.2:3306</adresse_serveur_bdd>
 <!--                <nom_bdd>test24</nom_bdd>-->
                 <nom_bdd>dobelocmns</nom_bdd>
                 <utilisateur_bdd>root</utilisateur_bdd>
-                <mot_de_passe_bdd></mot_de_passe_bdd>
+                <mot_de_passe_bdd>Cd04081987</mot_de_passe_bdd>
                 <ddl_auto>none</ddl_auto>
                 <nom_fichier_sql></nom_fichier_sql>
                 <initialisation_donnee_bdd>false</initialisation_donnee_bdd>
