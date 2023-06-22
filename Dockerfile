@@ -18,15 +18,14 @@
 #WORKDIR /app
 #
 ## Copy the jar file built in the builder stage
-#COPY --from=builder /app/target/LocTest-0.0.1-SNAPSHOT.war /app/LocTest.war
+#COPY --from=builder /app/target/LocTest-0.0.1-SNAPSHOT.war LocTest.war
 #
 ## Expose the port
 #EXPOSE 8080
 #
 ## Run the application
-#ENTRYPOINT ["java", "-jar", "/app/LocTest.war"]
-
-
+#ENTRYPOINT ["java", "-jar", "LocTest.war"]
+#
 
 
 # Use Tomcat version 8.5 as the base
