@@ -172,7 +172,6 @@
                 <jwt_secret></jwt_secret>
             </properties>
         </profile>
-
         <profile>
             <id>prod</id>
             <properties>
