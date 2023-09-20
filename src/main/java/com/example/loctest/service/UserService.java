@@ -175,6 +175,11 @@ public class UserService {
         return true;
     }
 
+
+
+//    public User getUser(String token) {
+//        return users.get(token);
+//    }
 }
 
 

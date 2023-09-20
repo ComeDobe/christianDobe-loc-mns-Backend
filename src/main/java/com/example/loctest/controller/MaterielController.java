@@ -250,9 +250,6 @@ public class MaterielController {
 
 
     // Méthode pour valider une réservation de matériel par l'administrateur
-
-
-
     @PatchMapping("/pret/{pretId}/valider")
     public ResponseEntity<String> validerReservation(@PathVariable int pretId) {
         PretEntity pret = pretService.getPretById(pretId);
@@ -263,8 +260,6 @@ public class MaterielController {
         if (pret.isValide()) {
             return new ResponseEntity<>("Reservation already validated", HttpStatus.BAD_REQUEST);
         }
-
-
         pret.setValide(true); // Marquer la réservation comme validée
         pretService.updatePret(pret);
 
@@ -273,7 +268,6 @@ public class MaterielController {
 
         String subject = "Confirmation de validation de la réservation";
         String message = "Cher utilisateur,\n\nVotre réservation de matériel a été validée par l'administrateur.\n\nDétails du matériel :\n";
-
         // Vérifier si le matériel est présent dans la réservation
         MaterielEntity materiel = pret.getMateriel();
         if (materiel != null) {
@@ -301,16 +295,12 @@ public class MaterielController {
         if (pret.isProlongationValide()) {
             return new ResponseEntity<>("Prolongation already validated", HttpStatus.BAD_REQUEST);
         }
-
         pret.setProlongationValide(true); // Marquer la prolongation comme validée
         pretService.updatePret(pret);
-
         // Envoyer un email de confirmation à l'utilisateur
         String emailUtilisateur = pret.getUser().getUserEmail();
-
         String subject = "Confirmation de validation de la prolongation de prêt";
         String message = "Cher utilisateur,\n\nVotre prolongation de prêt de matériel a été validée par l'administrateur.\n\n";
-
         // Vérifier si le matériel est présent dans la réservation
         MaterielEntity materiel = pret.getMateriel();
         if (materiel != null) {
@@ -321,13 +311,9 @@ public class MaterielController {
         } else {
             message += "Aucun détail de matériel disponible.\n";
         }
-
         emailService.sendEmail(emailUtilisateur, subject, message);
-
         return new ResponseEntity<>("Prolongation validated successfully", HttpStatus.OK);
     }
-
-
     @GetMapping("/prets/en-attente")
     public List<PretEntity> getPendingPrets() {
         return pretService.getPendingPrets();

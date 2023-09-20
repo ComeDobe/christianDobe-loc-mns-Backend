@@ -46,7 +46,6 @@ public class MaterielService {
         }
         return null;
     }
-
     public MaterielEntity editMateriel(int materielId, MaterielEntity materiel) {
         MaterielEntity currentMateriel = materielDao.findById(materielId).orElse(null);
         if (currentMateriel != null) {
@@ -69,7 +68,6 @@ public class MaterielService {
         }
         return null;
     }
-
 //    public List<MaterielEntity> searchMaterielByMarque(String materielmarque) {
 //        return materielDao.findByMarqueContainingIgnoreCase(materielmarque);
 //    }
