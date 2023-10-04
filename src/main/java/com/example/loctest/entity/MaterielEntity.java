@@ -45,7 +45,6 @@ public class MaterielEntity {
     @Column(name = "reserved")
     private boolean reserved;
 
-
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "posseder",

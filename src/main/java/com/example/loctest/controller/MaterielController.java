@@ -131,8 +131,8 @@ public class MaterielController {
         materiel.setMaterielQuantite(materiel.getMaterielQuantite() - materielQuantite);
 
 //        if (materiel.getMaterielQuantite() > 0) {
-//            materiel.setReserved(false);
 //        } else {
+//            materiel.setReserved(false);
 //            materiel.setReserved(true);
 //        }
         materiel.setReserved(materiel.getMaterielQuantite() <= 0);
