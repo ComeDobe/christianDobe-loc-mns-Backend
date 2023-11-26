@@ -1,37 +1,4 @@
 
-//ce code fonctionne
-
-//package com.example.loctest.controller;
-//
-//import com.example.loctest.dto.LoanRequest;
-//import com.example.loctest.service.EmailService;
-//import lombok.RequiredArgsConstructor;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.web.bind.annotation.*;
-//
-//import java.util.Map;
-
-//
-//@RestController
-//@RequiredArgsConstructor
-//public class EmailController {
-//
-//    private final EmailService emailService;
-//
-//    @RequestMapping(value = "/send-email", method = RequestMethod.POST)
-//    public String sendEmailToAdmin(@RequestBody Map<String, String> request) {
-//        String adminEmail = "christiandobe01@gmail.com";
-//        String subject = "Nouveau message d'un utilisateur";
-//        String message = request.get("message");
-//        emailService.sendEmail(adminEmail, subject, message);
-//        return "success";
-//    }
-//}
-
-
-
-
 package com.example.loctest.controller;
 
 import com.example.loctest.dto.LoanRequest;

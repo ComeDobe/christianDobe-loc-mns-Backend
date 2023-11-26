@@ -1,6 +1,4 @@
 package com.example.loctest.entity;
-
-
 import lombok.Getter;
 import lombok.Setter;
 
