@@ -135,6 +135,7 @@
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -187,7 +188,8 @@
 <!--                <nom_bdd>test24</nom_bdd>-->
                 <nom_bdd>dobelocmns</nom_bdd>
                 <utilisateur_bdd>root</utilisateur_bdd>
-                <mot_de_passe_bdd>Cd04081987</mot_de_passe_bdd>
+<!--                <mot_de_passe_bdd>Cd04081987</mot_de_passe_bdd>-->
+                <mot_de_passe_bdd>root</mot_de_passe_bdd>
                 <ddl_auto>none</ddl_auto>
                 <nom_fichier_sql></nom_fichier_sql>
                 <initialisation_donnee_bdd>false</initialisation_donnee_bdd>
