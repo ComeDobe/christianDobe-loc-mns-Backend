@@ -1,5 +1,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-20.04"
+  # Rediriger le port 8080 de la VM vers le port 8080 de l'hôte
+    config.vm.network "forwarded_port", guest: 8080, host: 8080
 
   # Provision Docker
   config.vm.provision "docker"
