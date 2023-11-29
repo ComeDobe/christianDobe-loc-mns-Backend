@@ -184,7 +184,8 @@
             <id>prod</id>
             <properties>
                 <skipUnitTest> true</skipUnitTest>
-                <adresse_serveur_bdd>172.18.0.2:3306</adresse_serveur_bdd>
+<!--                <adresse_serveur_bdd>172.18.0.2:3306</adresse_serveur_bdd>-->
+                <adresse_serveur_bdd>dobelocmns:3306</adresse_serveur_bdd>
 <!--                <nom_bdd>test24</nom_bdd>-->
                 <nom_bdd>dobelocmns</nom_bdd>
                 <utilisateur_bdd>root</utilisateur_bdd>
