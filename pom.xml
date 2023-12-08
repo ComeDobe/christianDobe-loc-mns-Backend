@@ -16,7 +16,7 @@
 
 <!--    nouv-->
 
-    <packaging>war</packaging>
+<!--    <packaging>war</packaging>-->
 
 <!--    <properties>-->
 <!--        <java.version>11</java.version>-->
@@ -198,7 +198,7 @@
                 <nom_bdd>dobelocmns</nom_bdd>
                 <utilisateur_bdd>root</utilisateur_bdd>
 <!--                <mot_de_passe_bdd>Cd04081987</mot_de_passe_bdd>-->
-                <mot_de_passe_bdd>root</mot_de_passe_bdd>
+                <mot_de_passe_bdd>1234</mot_de_passe_bdd>
                 <ddl_auto>none</ddl_auto>
                 <nom_fichier_sql></nom_fichier_sql>
                 <initialisation_donnee_bdd>false</initialisation_donnee_bdd>
