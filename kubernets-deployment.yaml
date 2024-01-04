@@ -1,3 +1,5 @@
+
+#service persistence des données
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -9,6 +11,8 @@ spec:
     requests:
       storage: 1Gi
 
+
+#service base de donnée
 ---
 
 apiVersion: apps/v1
@@ -55,6 +59,8 @@ spec:
   selector:
     app: mysqldb
 
+
+#service backend
 ---
 
 apiVersion: apps/v1
@@ -98,6 +104,8 @@ spec:
   selector:
     app: backend
 
+
+#  service phpmyadmin
 ---
 
 apiVersion: apps/v1
