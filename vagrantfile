@@ -1,13 +1,39 @@
+
+# vagrantfile pour projet docker
+
+# Vagrant.configure("2") do |config|
+#   config.vm.box = "bento/ubuntu-20.04"
+#
+#   # Rediriger le port 8080 de la VM vers le port 8080 de l'hôte
+#   config.vm.network "forwarded_port", guest: 8080, host: 8080
+#   config.vm.network "forwarded_port", guest: 8081, host: 8081
+#
+#   # Rediriger le port 8888 de la VM vers le port 8888 de l'hôte (pour phpMyAdmin)
+#   config.vm.network "forwarded_port", guest: 8888, host: 8888
+#
+#   # Provision Docker
+#   config.vm.provision "docker"
+# end
+
+
+# vagrantfile pour projet kubernetes
+
+
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
 Vagrant.configure("2") do |config|
-  config.vm.box = "bento/ubuntu-20.04"
-
-  # Rediriger le port 8080 de la VM vers le port 8080 de l'hôte
-  config.vm.network "forwarded_port", guest: 8080, host: 8080
-  config.vm.network "forwarded_port", guest: 8081, host: 8081
-
-  # Rediriger le port 8888 de la VM vers le port 8888 de l'hôte (pour phpMyAdmin)
-  config.vm.network "forwarded_port", guest: 8888, host: 8888
-
-  # Provision Docker
-  config.vm.provision "docker"
+  config.vm.define "minikube" do |minikube|
+    minikube.vm.box = "geerlingguy/centos7"
+    minikube.vm.network "private_network", type: "dhcp"
+    minikube.vm.hostname = "minikube"
+    minikube.vm.provider "virtualbox" do |v|
+      v.name = "minikube"
+      v.memory = 4096
+      v.cpus = 2
+    end
+    minikube.vm.provision :shell do |shell|
+      shell.path = "install_minikube.sh"
+    end
+  end
 end
