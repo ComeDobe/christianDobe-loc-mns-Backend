@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - mysql-deployment.yml
+  - backendlocmns-deployment.yml
+  - phpmyadmin-deployment.yml
+  - service-clusterip-mysql.yml
+  - backend-service.yml
+  - phpmyadmin-service.yml
+  - mysql-pvc.yml
+  - app-backendlocmns-namespace.yml
+  - app-backendlocmns-secret.yml
