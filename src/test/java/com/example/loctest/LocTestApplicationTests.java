@@ -94,64 +94,60 @@ class LocTestApplicationTests {
 
 //    @Test
 //    void testAddUser() {
-//        // Créer un utilisateur fictif
+//
 //        User user = new User();
 //        user.setUserName("christian");
 //        user.setUserEmail("christdobe@test.com");
 //        user.setUserPassword("root");
-//        // Configurer le mock pour renvoyer une valeur vide, indiquant que l'utilisateur n'existe pas
+//
 //        when(userDao.findByUserName("christian")).thenReturn(Optional.empty());
 //        when(userDao.findByUserEmail("christdobe@test.com")).thenReturn(Optional.empty());
 //
-//        // Configurer le mock pour renvoyer une valeur encodée pour le mot de passe
+//
 //        String encodedPassword = "encodedPassword";
 //        when(passwordEncoder.encode("root")).thenReturn(encodedPassword);
 //
-//        // Configurer le mock pour renvoyer l'utilisateur ajouté
+//
 //        User addedUser = new User();
 //        addedUser.setUserName("christian");
 //        addedUser.setUserEmail("christdobe@test.com");
 //        when(userDao.save(user)).thenReturn(addedUser);
 //
-//        // Appeler la méthode à tester
+//
 //        User result = userService.addUser(user);
 //
-//        // Vérifier les assertions
+//
 //        assertNotNull(result);
 //        assertEquals("christian", result.getUserName());
 //        assertEquals("christdobe@test.com", result.getUserEmail());
-//        // Vérifier que les méthodes du mock ont été appelées avec les bons arguments
+//
 //        verify(userDao).findByUserName("christian");
 //        verify(userDao).findByUserEmail("christdobe@test.com");
 //        verify(passwordEncoder).encode("root");
 //        verify(userDao).save(user);
 //    }
 
-//
+
 //    @Test
 //    void testGetUserInfoWithToken() {
-//        // Créer un utilisateur fictif
+//
 //        User user = new User();
 //        user.setUserName("christian");
 //        user.setUserEmail("christian@test.com");
 //        user.setUserPassword("password");
 //
-//        // Générer un token JWT pour l'utilisateur fictif
+//
 //        JwtUtil jwtUtil = new JwtUtil();
 //        String token = jwtUtil.generateToken((UserDetails) user);
 //
-//        // Configurer le mock pour renvoyer l'utilisateur en utilisant le token
 //        when(userService.getUser(eq(token))).thenReturn(user);
 //
-//        // Appeler la méthode à tester en utilisant le token
 //        User result = userService.getUser(token);
 //
-//        // Vérifier les assertions
 //        assertNotNull(result);
 //        assertEquals("christian", result.getUserName());
 //        assertEquals("christian@test.com", result.getUserEmail());
 //
-//        // Vérifier que la méthode du service a été appelée avec le bon argument
 //        verify(userService).getUser(eq(token));
 //    }
 

@@ -156,19 +156,15 @@ public class UserService {
         return (List<User>) userDao.findAll();
     }
     private boolean isPasswordValid(String password) {
-        // Vérifier la longueur minimale du mot de passe
         if (password.length() >= 8) {
             return false;
         }
-        // Vérifier la présence d'au moins un caractère spécial
         if (!password.matches(".*[!@#$%^&*()].*")) {
             return false;
         }
-        // Vérifier la présence d'au moins un chiffre
         if (!password.matches(".*\\d.*")) {
             return false;
         }
-        // Vérifier la présence d'au moins une majuscule
         if (!password.matches(".*[A-Z].*")) {
             return false;
         }
