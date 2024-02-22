@@ -108,21 +108,17 @@ public class UserService {
 
 
     public User addUser(User user) {
-        // Vérifier si le nom d'utilisateur existe déjà
         Optional<User> existingUser = userDao.findByUserName(user.getUserName());
         if (existingUser.isPresent()) {
             throw new IllegalArgumentException("Username already exists");
         }
-        // Vérifier si l'e-mail existe déjà
         Optional<Object> existingEmail = userDao.findByUserEmail(user.getUserEmail());
         if (existingEmail.isPresent()) {
             throw new IllegalArgumentException("Email already exists");
         }
-        // Encoder le mot de passe
         String encodedPassword = passwordEncoder.encode(user.getUserPassword());
         user.setUserPassword(encodedPassword);
 
-        // Enregistrer l'utilisateur dans la base de données
         User addedUser = userDao.save(user);
 
         return addedUser;
