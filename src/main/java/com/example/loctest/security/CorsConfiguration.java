@@ -8,13 +8,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.List;
 
 @Configuration
-public class CorsConfiguration  {
+public class CorsConfiguration {
 
     private static final String GET = "GET";
     private static final String POST = "POST";
     private static final String PUT = "PUT";
     private static final String PATCH = "PATCH";
     private static final String DELETE = "DELETE";
+    private static final String OPTIONS = "OPTIONS";
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
@@ -22,13 +23,11 @@ public class CorsConfiguration  {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://192.168.106.128:8083")
-                        .allowedMethods(GET, POST, PUT, DELETE, PATCH)
+                        .allowedOrigins("http://192.168.106.128:8083", "http://localhost:8083")
+                        .allowedMethods(GET, POST, PUT, DELETE, PATCH, OPTIONS)
                         .allowedHeaders("*")
-                        .allowedOriginPatterns("*")
                         .allowCredentials(true);
             }
         };
     }
-
 }
