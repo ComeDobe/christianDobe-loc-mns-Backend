@@ -26,6 +26,7 @@ public class CorsConfiguration {
                         .allowedOrigins("http://192.168.106.128:8083", "http://localhost:8083")
                         .allowedMethods(GET, POST, PUT, DELETE, PATCH, OPTIONS)
                         .allowedHeaders("*")
+                        .allowedOriginPatterns("*")
                         .allowCredentials(true);
             }
         };
