@@ -23,7 +23,7 @@ public class CorsConfiguration {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://192.168.106.128:8083", "http://localhost:8083")
+                        .allowedOrigins("http://192.168.99.10:8083", "http://localhost:8083")
                         .allowedMethods(GET, POST, PUT, DELETE, PATCH, OPTIONS)
                         .allowedHeaders("*")
                         .allowedOriginPatterns("*")
