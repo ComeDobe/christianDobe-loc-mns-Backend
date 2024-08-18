@@ -1,59 +1,59 @@
-#version: '3.3'
-#
-#services:
-#  backend:
-#    image: backendlocmns
-#    build:
-#      context: ./backend
-#      dockerfile: Dockerfile
-#    ports:
-#      - "8080:8080"
-#    environment:
-#      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/dobelocmns?serverTimezone=UTC&createDatabaseIfNotExist=true
-#      SPRING_DATASOURCE_USERNAME: root
-#      SPRING_DATASOURCE_PASSWORD: 1234
-#    depends_on:
-#      - mysqldb
-#    networks:
-#      - backend-net
-#
-#  frontend:
-#    image: frontendlocmns
-#    build:
-#      context: ./frontend
-#      dockerfile: Dockerfile
-#    ports:
-#      - "80:80"
-#    networks:
-#      - backend-net
-#
-#  mysqldb:
-#    image: mysql:5.7
-#    environment:
-#      MYSQL_ROOT_PASSWORD: 1234
-#      MYSQL_DATABASE: dobelocmns
-#    ports:
-#      - "3306:3306"
-#    networks:
-#      - backend-net
-#    volumes:
-#      - mysql-data:/var/lib/mysql
-#
-#  phpmyadmin:
-#    image: phpmyadmin/phpmyadmin
-#    environment:
-#      PMA_HOST: mysqldb
-#      PMA_PORT: 3306
-#      PMA_ARBITRARY: 1
-#    ports:
-#      - "8081:80"
-#    depends_on:
-#      - mysqldb
-#    networks:
-#      - backend-net
-#
-#networks:
-#  backend-net:
-#
-#volumes:
-#  mysql-data:
+version: '3.3'
+
+services:
+  backend:
+    image: backendlocmns
+    build:
+      context: ./christianDobe-loc-mns-Backend
+      dockerfile: Dockerfile
+    ports:
+      - "8082:9090"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/dobelocmns?serverTimezone=UTC&createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1234
+    depends_on:
+      - mysqldb
+    networks:
+      - backend-net
+
+  frontend:
+    image: frontendlocmns
+    build:
+      context: ./christianDobe-loc-mns-Frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8083:80"
+    networks:
+      - backend-net
+
+  mysqldb:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: dobelocmns
+    ports:
+      - "3306:3306"
+    networks:
+      - backend-net
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysqldb
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    ports:
+      - "8085:80"
+    depends_on:
+      - mysqldb
+    networks:
+      - backend-net
+
+networks:
+  backend-net:
+
+volumes:
+  mysql-data:
