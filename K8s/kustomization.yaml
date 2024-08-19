@@ -5,7 +5,7 @@ resources:
   - mysql/mysql-deployment.yml
   - backend/app-deployment.yml
   - php/myadmin-deployment.yml
-  - mysql/service-clusterip-mysql.yml
+  - mysql/msql-clusterIP-mysql.yml
   - backend/app-nodeport.yml
   - php/myadmin-clusterIP.yml
   - mysql/mysql-pvc.yml
