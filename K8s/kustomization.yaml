@@ -11,3 +11,5 @@ resources:
   - mysql/mysql-pvc.yml
   - backend/app-namespace.yml
   - backend/app-secret.yml
+  - frontend/app-deployment.yml
+  - frontend/app-nodeport.yml
